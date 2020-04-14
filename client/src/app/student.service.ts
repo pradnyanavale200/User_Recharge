@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StudentService {
   studentApi = 'http://localhost:3000/student';
+  compApi = 'http://localhost:3000/company';
+  rechApi = 'http://localhost:3000/recharge';
   constructor(
     private http: HttpClient,
     private route: Router
@@ -17,7 +19,12 @@ export class StudentService {
     return this.http.delete(this.studentApi + `/studentDelete/${id}`);
   }
   show(){
-    return this.http.get(this.studentApi + `/show`);
+    console.log('yeye');
+    return this.http.get(this.compApi + `/show`);
+  }
+  showpack(data){
+    console.log('yeye');
+    return this.http.post(this.rechApi + `/showpack`, data);
   }
   signup(data){
     return this.http.post(this.studentApi + `/signup`, data);

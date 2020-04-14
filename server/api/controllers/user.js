@@ -34,9 +34,9 @@ exports.user_signup = async (req, res, next) => {
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     mobileno: req.body.mobileno,
-    email: req.body.email,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    transactionpassword: req.body.transactionpassword
   });
 
   user.save().then((response) =>{
@@ -97,3 +97,4 @@ exports.user_delete = (req, res, next) => {
   res.status(200).json({ msg: "user_delete works" })
 
 };
+

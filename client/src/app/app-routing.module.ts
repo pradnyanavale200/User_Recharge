@@ -7,6 +7,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
 import { AuthgGuard } from './authg.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 const routes: Routes = [
@@ -16,7 +19,11 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent},
   { path: 'homepage', component: HomePageComponent, canActivate: [AuthgGuard]},
   { path: 'student', component: StudentRegistrationComponent},
-  { path: 'update/:id', component: UpdatestudentComponent}
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthgGuard]},
+  { path: 'update/:id', component: UpdatestudentComponent},
+  { path: 'recharge', component: RechargeComponent},
+  { path: 'transaction', component: TransactionComponent}
+  
 ];
 
 @NgModule({

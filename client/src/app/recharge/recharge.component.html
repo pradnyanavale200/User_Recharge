@@ -1,0 +1,23 @@
+
+<div >
+  <label>select</label>
+    <select #selctedCategory>
+     <option *ngFor="let item of customer" [value]="item.companyname"> {{item.companyname}}</option>
+
+</select>
+
+<button ng-model="clicked" (click)="datapack(selctedCategory.value)">OK</button>
+
+</div>
+
+  <div *ngFor="let item of datapacklist">
+    <table style="width:100%"  cellspacing="10">
+      <tr>
+    
+        <td colspan="2">{{item.packinfo}}</td>
+    
+      </tr>
+    
+    </table>
+    </div>
+    

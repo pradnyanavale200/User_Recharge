@@ -35,7 +35,7 @@ export class LoginFormComponent implements OnInit {
     this.authServive.login(data).subscribe((response: any) => {
       localStorage.setItem('token', response.token);
       console.log(response);
-      this.route.navigate(['/homepage']);
+      this.route.navigate(['/dashboard']);
     }, (error) => {
 
       console.log(error);

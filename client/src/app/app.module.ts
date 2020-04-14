@@ -15,6 +15,9 @@ import { StudentRegistrationComponent } from './student-registration/student-reg
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
 import { AuthgGuard } from './authg.guard';
 import { TokenInterceptorService} from './token-interceptor.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RechargeComponent } from './recharge/recharge.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { TokenInterceptorService} from './token-interceptor.service';
     ForgetPasswordComponent,
     HomePageComponent,
     StudentRegistrationComponent,
-    UpdatestudentComponent
+    UpdatestudentComponent,
+    DashboardComponent,
+    RechargeComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

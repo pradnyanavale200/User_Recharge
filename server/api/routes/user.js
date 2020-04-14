@@ -9,4 +9,6 @@ router.post("/login", UserController.user_login);
 
 router.post("/forgetpassword", UserController.user_forget_password);
 
+//router.post("/dashboard", UserController.user_dashboard);
+
 module.exports = router;

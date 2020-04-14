@@ -23,10 +23,9 @@ export class RegistrationFormComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       mobileno: ['', Validators.required],
-      email: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
-      confirmpassword: ['', Validators.required]
+      transactionpassword: ['', Validators.required]
     });
   }
 
@@ -35,9 +34,9 @@ export class RegistrationFormComponent implements OnInit {
       firstname: this.registrationform.get('firstname').value,
       lastname: this.registrationform.get('lastname').value,
       mobileno: this.registrationform.get('mobileno').value,
-      email: this.registrationform.get('email').value,
       username: this.registrationform.get('username').value,
-      password: this.registrationform.get('password').value
+      password: this.registrationform.get('password').value,
+      transactionpassword: this.registrationform.get('transactionpassword').value
     };
     console.log('data', data);
 
