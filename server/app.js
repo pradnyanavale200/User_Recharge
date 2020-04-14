@@ -8,6 +8,7 @@ const userRoutes = require('./api/routes/user');
 const studentRoutes = require('./api/routes/student');
 const companyRoutes = require('./api/routes/company');
 const rechargeRoutes = require('./api/routes/recharge');
+const transactionRoutes = require('./api/routes/transaction');
 
 mongoose.connect("mongodb+srv://pknavale:"+process.env.MONGO_ATLAS_PW+"@cluster0-ospcs.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
 // to generate link watch video given in below link
@@ -39,6 +40,7 @@ app.use("/user", userRoutes);
 app.use("/student", studentRoutes);
 app.use("/company", companyRoutes);
 app.use("/recharge", rechargeRoutes)
+app.use("/transaction", transactionRoutes)
 
 app.use((req, res, next) => {
   const error = new Error("Not found");

@@ -6,18 +6,26 @@
 
 </select>
 
-<button ng-model="clicked" (click)="datapack(selctedCategory.value)">OK</button>
+<button (click)="datapack(selctedCategory.value)">OK</button>
 
 </div>
-
+<div *ngIf="selected">
   <div *ngFor="let item of datapacklist">
     <table style="width:100%"  cellspacing="10">
       <tr>
-    
+
         <td colspan="2">{{item.packinfo}}</td>
-    
+
       </tr>
-    
+
     </table>
     </div>
-    
+    <h2>Enter mobile no. here</h2>
+    <form [formGroup]="rechargeForm">
+      <h6>Enter mobile no.:</h6> <input formControlName="mobileno" type="text"><br>
+      <h6>Enter company.:</h6> <input formControlName="company" type="text"><br>
+      <h6>Enter pack amount.:</h6> <input formControlName="amount" type="text"><br>
+      <h6>Enter Transaction passWord:</h6> <input formControlName= "password" type="password"><br>
+      <button (click)="recharge()">submit</button>
+    </form><br>
+  </div>

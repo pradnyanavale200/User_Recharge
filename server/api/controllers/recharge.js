@@ -19,5 +19,6 @@ exports.company_showpack = async (req, res, next) => {
         pack: comp
       });
     }
-      
+    
   };
+  

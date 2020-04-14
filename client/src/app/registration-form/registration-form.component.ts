@@ -36,7 +36,8 @@ export class RegistrationFormComponent implements OnInit {
       mobileno: this.registrationform.get('mobileno').value,
       username: this.registrationform.get('username').value,
       password: this.registrationform.get('password').value,
-      transactionpassword: this.registrationform.get('transactionpassword').value
+      transactionpassword: this.registrationform.get('transactionpassword').value,
+      balance:"2000"
     };
     console.log('data', data);
 

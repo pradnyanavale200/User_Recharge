@@ -20,6 +20,13 @@ export class AuthService {
   register(data) {
     return this.http.post(this.authApi + '/signup', data);
   }
+  findbal(data) {
+    return this.http.post(this.authApi + '/findbal', data);
+  }
+  updatecusto(data1){
+    return this.http.put(this.authApi + `/updatecusto`, data1);
+  }
+
   loggedIn(){
     return !!localStorage.getItem('token');
   }

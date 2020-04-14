@@ -7,7 +7,8 @@ const userSchema = mongoose.Schema({
     mobileno: { type: String, required: true },
     username: { type: String, required: true },
     password: { type: String, required: true },
-    transactionpassword :{ type: String, required: true }
+    transactionpassword :{ type: String, required: true },
+    balance :{ type: String, required: true }
 });
 
 module.exports = mongoose.model('customer', userSchema);

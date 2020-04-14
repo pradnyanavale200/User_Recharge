@@ -21,14 +21,7 @@ function verifyToken(req,res,next) {
 }
 exports.user_signup = async (req, res, next) => {
   
-  const alreadyuser = await User.findOne({email: req.body.email});
-
-  if(alreadyuser){
-    return res.status(404).json({
-      msg : "Email already exist"
-    });
-  }
-
+  
   const user =new User({
     _id: new mongoose.Types.ObjectId(),
     firstname: req.body.firstname,
@@ -36,7 +29,8 @@ exports.user_signup = async (req, res, next) => {
     mobileno: req.body.mobileno,
     username: req.body.username,
     password: req.body.password,
-    transactionpassword: req.body.transactionpassword
+    transactionpassword: req.body.transactionpassword,
+    balance:req.body.balance
   });
 
   user.save().then((response) =>{
@@ -91,7 +85,46 @@ exports.user_forget_password = async (req, res, next) => {
       });
     }   
 };
- 
+
+exports.user_findbal = async (req, res, next) => {
+
+  console.log("req.body",req.body);
+
+  const user = await User.findOne({username: req.body.username });
+ console.log("user",user)
+  if(!user) {
+    return res.status(404).json({
+      msg : "Login Failed"
+    });
+  }
+  else{
+    return res.status(201).json({
+      msg : "Successful",
+      bal: user.balance
+    });
+  }
+    
+};
+
+exports.user_update = async (req, res, next) => {
+  console.log(req.body._id);
+      const student = await User.update({username: req.body.username},{balance:req.body.balance});
+      
+    
+      if(!student) {
+        return res.status(404).json({
+          msg : "update Failed"
+        });
+      }
+      else{
+        return res.status(201).json({
+          msg : "update Successful",
+        });
+      }
+    
+};
+
+
 
 exports.user_delete = (req, res, next) => {
   res.status(200).json({ msg: "user_delete works" })

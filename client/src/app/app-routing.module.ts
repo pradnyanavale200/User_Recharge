@@ -19,11 +19,11 @@ const routes: Routes = [
   { path: 'forgetpassword', component: ForgetPasswordComponent},
   { path: 'homepage', component: HomePageComponent, canActivate: [AuthgGuard]},
   { path: 'student', component: StudentRegistrationComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthgGuard]},
+  { path: 'dashboard/:data.username', component: DashboardComponent, canActivate: [AuthgGuard]},
   { path: 'update/:id', component: UpdatestudentComponent},
-  { path: 'recharge', component: RechargeComponent},
+  { path: 'recharge/:this.user', component: RechargeComponent},
   { path: 'transaction', component: TransactionComponent}
-  
+
 ];
 
 @NgModule({
