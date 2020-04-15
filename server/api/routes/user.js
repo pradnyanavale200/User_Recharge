@@ -11,6 +11,7 @@ router.post("/login", UserController.user_login);
 
 router.put("/updatecusto", UserController.user_update);
 router.post("/forgetpassword", UserController.user_forget_password);
+router.post("/checktransactionpass", UserController.user_checktransactionpass);
 
 //router.post("/dashboard", UserController.user_dashboard);
 

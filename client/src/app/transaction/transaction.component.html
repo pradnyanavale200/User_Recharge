@@ -1,1 +1,30 @@
-<p>transaction works!</p>
+
+
+  <table style="width:100%"  cellspacing="10">
+    <tr>
+      <td>
+        mobile no.
+      </td>
+      <td>
+        company
+      </td>
+      <td>
+        amount
+      </td>
+    </tr>
+  </table>
+  <div *ngFor="let item of transaction">
+  <table style="width:100%"  cellspacing="10">
+      <tr>
+
+        <td colspan="2">{{item.mobileno}}</td>
+
+        <td colspan="2">{{item.company}}</td>
+
+
+        <td colspan="2">{{item.amount}}</td>
+
+      </tr>
+
+  </table>
+</div>

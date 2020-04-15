@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'dashboard/:data.username', component: DashboardComponent, canActivate: [AuthgGuard]},
   { path: 'update/:id', component: UpdatestudentComponent},
   { path: 'recharge/:this.user', component: RechargeComponent},
-  { path: 'transaction', component: TransactionComponent}
+  { path: 'transaction/:this.user', component: TransactionComponent}
 
 ];
 

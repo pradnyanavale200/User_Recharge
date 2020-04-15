@@ -124,6 +124,24 @@ exports.user_update = async (req, res, next) => {
     
 };
 
+exports.user_checktransactionpass = async (req, res, next) => {
+
+  console.log("req.bodytran",req.body);
+
+  const user = await User.findOne({username: req.body.username ,transactionpassword: req.body.tranpass });
+
+  if(!user) {
+    return res.status(404).json({
+      msg : "pass Failed"
+    });
+  }
+  else{
+    return res.status(201).json({
+      msg : "pass succes"
+    });
+  }
+    
+};
 
 
 exports.user_delete = (req, res, next) => {

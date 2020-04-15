@@ -33,6 +33,9 @@ export class StudentService {
   recharge(data){
     return this.http.post(this.tranApi + `/recharge`, data);
   }
+  showtransaction(data){
+    return this.http.post(this.tranApi + `/showtransaction`, data);
+  }
   showone(data){
     return this.http.post(this.studentApi + `/showone`, data);
   }

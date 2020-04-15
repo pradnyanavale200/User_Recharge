@@ -26,7 +26,9 @@ export class AuthService {
   updatecusto(data1){
     return this.http.put(this.authApi + `/updatecusto`, data1);
   }
-
+  checktransactionpass(data2){
+    return this.http.post(this.authApi + '/checktransactionpass', data2);
+  }
   loggedIn(){
     return !!localStorage.getItem('token');
   }

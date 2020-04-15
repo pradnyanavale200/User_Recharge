@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit {
     this.route.navigate(['/recharge', this.user]);
   }
   Transaction(){
+    this.route.navigate(['/transaction', this.user]);
 
   }
 
